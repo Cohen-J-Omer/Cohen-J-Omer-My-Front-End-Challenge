@@ -388,7 +388,7 @@ export class App extends React.PureComponent<{}, AppState> {
 			newPage = this.state.page + 1;
 		}
 		else if(pageNum == PageNumber.Last){
-			newPage = this.state.lastPage;
+			newPage = Math.ceil(this.state.lastPage);
 		}
 		else{
 			newPage = pageNum;
