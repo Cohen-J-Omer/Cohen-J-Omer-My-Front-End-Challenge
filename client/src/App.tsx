@@ -117,7 +117,7 @@ export class App extends React.PureComponent<{}, AppState> {
 				<Grid item xs={3}>
 					<br/>
                     <p className = 'pageNumber'>
-						Page {  this.state.page} of {this.state.lastPage}
+						Page {  this.state.page} of {Math.ceil(this.state.lastPage}
 					</p>
 				</Grid>
 				
