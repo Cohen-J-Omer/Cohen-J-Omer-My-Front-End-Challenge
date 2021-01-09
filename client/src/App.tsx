@@ -116,9 +116,8 @@ export class App extends React.PureComponent<{}, AppState> {
                 </Grid>
 				<Grid item xs={3}>
 					<br/>
-                    <p className = 'pageNumber'>
-						Page {  this.state.page} of {Math.ceil(this.state.lastPage)}
-					</p>
+					{this.calculatePageInfo()}
+                    
 				</Grid>
 				
                 <Grid item xs={2}>
@@ -133,6 +132,14 @@ export class App extends React.PureComponent<{}, AppState> {
 		)
 	}
 
+	calculatePageInfo(){
+		let lastPage:number = Math.ceil(this.state.lastPage);
+		
+		let currentPage = (lastPage == 0)? 0:this.state.page;
+		return(<p className = 'pageNumber'>
+					Page {  currentPage} of {lastPage}
+				</p>)
+	}
 
 	renderStatisticsCards() {
 		return(
@@ -482,6 +489,7 @@ export class App extends React.PureComponent<{}, AppState> {
 				return require('./assets/refunded.png');
 		}
 	}
+
 	
 }
 
